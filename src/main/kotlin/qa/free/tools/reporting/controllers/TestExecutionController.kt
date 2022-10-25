@@ -11,6 +11,11 @@ import java.util.UUID
 @RequestMapping("/api/v1/test-execution")
 class TestExecutionController(val service: TestExecutionService) {
 
+    @DeleteMapping("/{uuid}")
+    fun deleteTestExecutionByUuid(@PathVariable uuid: String) : Int {
+        return service.deleteTestExecutionByUuid(UUID.fromString(uuid))
+    }
+
     @GetMapping
     fun getTestExecutions(@RequestParam(defaultValue="0") page: Int,
                           @RequestParam(defaultValue="10") size: Int): Page<TestExecution> {

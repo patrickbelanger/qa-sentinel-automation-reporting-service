@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import qa.free.tools.reporting.entities.TestExecution
 import qa.free.tools.reporting.repositories.TestExecutionRepository
-import java.sql.SQLException
 import java.util.UUID
 
 @Service
@@ -29,5 +28,4 @@ class TestExecutionService(val repository: TestExecutionRepository) {
     fun saveTestExecution(testExecution: TestExecution): TestExecution {
         return repository.save(testExecution)
     }
-
 }

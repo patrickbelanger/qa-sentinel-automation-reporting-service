@@ -13,6 +13,8 @@ import java.util.UUID
 interface TestExecutionRepository : JpaRepository<TestExecution, Long> {
 
     override fun findAll(pageable: Pageable): Page<TestExecution>
+
+    @Modifying
     override fun <S : TestExecution> save(entity: S): S;
 
     @Modifying
@@ -21,5 +23,4 @@ interface TestExecutionRepository : JpaRepository<TestExecution, Long> {
 
     @Query("SELECT * FROM test_execution WHERE testuuid = :uuid", nativeQuery = true)
     fun findTestExecutionById(uuid: UUID): TestExecution
-
 }

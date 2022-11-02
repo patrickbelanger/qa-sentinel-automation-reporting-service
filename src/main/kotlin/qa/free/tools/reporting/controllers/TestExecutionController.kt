@@ -28,8 +28,8 @@ class TestExecutionController(val service: TestExecutionService) {
     }
 
     @PostMapping
-    fun setTestExecution(@RequestBody testExecution: TestExecution) {
-        service.saveTestExecution(testExecution)
+    fun saveTestExecution(@RequestBody testExecution: TestExecution): TestExecution {
+        return service.saveTestExecution(testExecution)
     }
 
 }

@@ -14,5 +14,5 @@ interface TestExecutionRepository : JpaRepository<TestExecution, Long> {
 
     fun deleteByTestUuid(uuid: String): Int
 
-    fun findTestExecutionByTestUuid(uuid: String): TestExecution
+    fun findByTestUuid(uuid: String): TestExecution
 }

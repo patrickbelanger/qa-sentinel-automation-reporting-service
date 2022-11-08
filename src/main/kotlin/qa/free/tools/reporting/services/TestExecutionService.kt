@@ -21,7 +21,7 @@ class TestExecutionService(val repository: TestExecutionRepository) {
     }
 
     fun getTestExecution(uuid: UUID): TestExecution {
-        return repository.findTestExecutionByTestUuid(uuid.toString())
+        return repository.findByTestUuid(uuid.toString())
     }
 
     @Transactional

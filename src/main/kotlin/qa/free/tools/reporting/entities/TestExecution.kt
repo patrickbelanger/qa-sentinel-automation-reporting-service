@@ -10,12 +10,12 @@ import javax.persistence.*
 data class TestExecution(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long?,
-    val methodName: String?,
+    var id: Long?,
+    var methodName: String?,
     @Enumerated(EnumType.STRING)
-    val testResult: TestResults?,
-    val testUUID: String?,
-    val runtime: String?,
-    val executionStart: LocalTime?,
-    val executionEnd: LocalTime?
+    var testResult: TestResults?,
+    var testUuid: String?,
+    var runtime: String?,
+    var executionStart: LocalTime?,
+    var executionEnd: LocalTime?
 )

@@ -12,8 +12,8 @@ import java.util.UUID
 class TestExecutionService(val repository: TestExecutionRepository) {
 
     @Transactional
-    fun deleteTestExecutionByUuid(uuid: UUID): Int {
-        return repository.deleteByUuid(uuid)
+    fun deleteTestExecutionByTestUuid(uuid: UUID): Int {
+        return repository.deleteByTestUuid(uuid.toString())
     }
 
     fun getTestExecutions(pageable: Pageable): Page<TestExecution> {
@@ -21,7 +21,7 @@ class TestExecutionService(val repository: TestExecutionRepository) {
     }
 
     fun getTestExecution(uuid: UUID): TestExecution {
-        return repository.findTestExecutionById(uuid)
+        return repository.findTestExecutionByTestUuid(uuid.toString())
     }
 
     @Transactional

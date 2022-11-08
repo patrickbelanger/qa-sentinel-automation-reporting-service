@@ -13,7 +13,7 @@ class TestExecutionController(val service: TestExecutionService) {
 
     @DeleteMapping("/{uuid}")
     fun deleteTestExecutionByUuid(@PathVariable uuid: String) : Int {
-        return service.deleteTestExecutionByUuid(UUID.fromString(uuid))
+        return service.deleteTestExecutionByTestUuid(UUID.fromString(uuid))
     }
 
     @GetMapping

@@ -1,5 +1,6 @@
 package qa.free.tools.reporting.entities
 
+import lombok.AllArgsConstructor
 import qa.free.tools.reporting.types.TestResults
 import java.time.LocalTime
 import java.util.UUID
@@ -7,6 +8,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name="test_execution")
+@AllArgsConstructor
 data class TestExecution(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

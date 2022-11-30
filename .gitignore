@@ -31,3 +31,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/.jpb/jpb-settings.xml
+/reporting-service.iml

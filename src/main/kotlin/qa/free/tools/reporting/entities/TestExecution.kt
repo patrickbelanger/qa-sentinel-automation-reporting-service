@@ -1,5 +1,6 @@
 package qa.free.tools.reporting.entities
 
+import lombok.AllArgsConstructor
 import qa.free.tools.reporting.types.TestResults
 import java.time.LocalTime
 import java.util.UUID
@@ -7,15 +8,16 @@ import javax.persistence.*
 
 @Entity
 @Table(name="test_execution")
-class TestExecution(
+@AllArgsConstructor
+data class TestExecution(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
-    val methodName: String,
+    var id: Long?,
+    var methodName: String?,
     @Enumerated(EnumType.STRING)
-    val testResult: TestResults,
-    val testUUID: UUID,
-    val runtime: String,
-    val executionStart: LocalTime,
-    val executionEnd: LocalTime
+    var testResult: TestResults?,
+    var testUuid: String?,
+    var runtime: String?,
+    var executionStart: LocalTime?,
+    var executionEnd: LocalTime?
 )
